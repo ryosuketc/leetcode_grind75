@@ -28,7 +28,10 @@ $ ./prcreate.sh "8. String to Integer (atoi)" https://leetcode.com/problems/stri
 ```
 
 ## Favorite repositories
-
+*   C++
+    *   https://github.com/Ryotaro25/leetcode_first60/pulls
+    *   https://github.com/irohafternoon/LeetCode/pulls
+    *   https://github.com/nktr-cp/leetcode/pulls
 *   Python
     *   https://github.com/hayashi-ay/leetcode/pulls
     *   https://github.com/olsen-blue/Arai60/pulls
