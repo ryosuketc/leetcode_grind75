@@ -53,7 +53,7 @@ echo -e "# $TITLE\n\n$URL" | gh pr create \
   --title "$TITLE" \
   --body-file=-
 
-echo "$TITLE を解いたのでレビューいただけると幸いです。"
+echo "$TITLE (Grind 75) を解いたのでレビューいただけると幸いです。"
 echo "問題: $URL"
 echo "PR: TBD"
-echo "言語: Python"
+echo "言語: C++"
