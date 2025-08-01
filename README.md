@@ -40,6 +40,8 @@ Refer to PRs.
 *   Arai 60: https://github.com/ryosuketc/leetcode_arai60.
 *   C++ 入門系
     *   [競プロのための標準 C++](https://zenn.dev/reputeless/books/standard-cpp-for-competitive-programming)
+    *   [C++の標準ライブラリデータ構造まとめ -AtCoder等, 競プロで使える-](https://qiita.com/gnbrganchan/items/616f3701b1169e834565#unordered_map)
+    *   [[C++] STLの型の使い分け](https://qiita.com/h_hiro_/items/a83a8fd2391d4a3f0e1c)
     *   [C++ for Python Programmers (runestone.academy)](https://runestone.academy/ns/books/published/cpp4python/index.html)
     *   [C++ for Python Programmers (cs.kenyon.edu)](https://cs.kenyon.edu/wp-content/uploads/2020/11/CForPythonProgrammers.pdf)
 
