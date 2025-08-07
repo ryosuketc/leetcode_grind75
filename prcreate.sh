@@ -53,12 +53,22 @@ echo -e "# $TITLE\n\n$URL" | gh pr create \
   --title "$TITLE" \
   --body-file=-
 
+echo
+echo "OPTION 1"
 echo "$TITLE (Grind 75)"
 echo "問題: $URL"
 echo "PR: TBD"
 echo "言語: C++"
+echo
 echo "Arai 60 (Python) を C++ で解き直したものなので、個別 mention はしないでおきます。C++ レビューしてもいいよという方がいらしたらコメントいただけると嬉しいです。"
 echo "*C++ を始めたばかりなので、問題のアルゴリズムよりは、C++ 言語仕様に関するコメントが多めです。多くの解き方を試すよりは、optimal な解法を C++ で書くとどうなるのか、といったスタンスで練習してみています。*"
+echo
+echo
+echo "OPTION 2"
+echo "$TITLE (Grind 75)"
+echo "問題: $URL"
+echo "PR: TBD"
+echo "言語: C++"
 echo
 echo "最近解いた方が少ないので、前問同様個別 mention はしませんが、C++ レビューしてもいいよという方がいらしたらコメントいただけると嬉しいです。"
 echo "*C++ を始めたばかりなので、問題のアルゴリズムよりは、C++ 言語仕様に関するコメントが多めです。多くの解き方を試すよりは、optimal な解法を C++ で書くとどうなるのか、といったスタンスで練習してみています。*"
