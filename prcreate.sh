@@ -47,17 +47,23 @@ git push --set-upstream origin "$DIR_NAME"
 
 # Create PR
 echo "Creating PR..."
-echo -e "# $TITLE\n\n$URL" | gh pr create \
+PR_URL=$(echo -e "# $TITLE\n\n$URL" | gh pr create \
   --base main \
   --head "$DIR_NAME" \
   --title "$TITLE" \
-  --body-file=-
+  --body-file=-)
+# Check if the PR URL was successfully created
+if [ -z "$PR_URL" ]; then
+    echo "Failed to create pull request. Please check your gh authentication and network connection."
+    exit 1
+fi
+echo "PR is created successfully: $PR_URL"
 
 echo
 echo "OPTION 1"
 echo "$TITLE (Grind 75)"
 echo "問題: $URL"
-echo "PR: TBD"
+echo "PR: $PR_URL"
 echo "言語: C++"
 echo
 echo "Arai 60 (Python) を C++ で解き直したものなので、個別 mention はしないでおきます。C++ レビューしてもいいよという方がいらしたらコメントいただけると嬉しいです。"
@@ -67,7 +73,7 @@ echo
 echo "OPTION 2"
 echo "$TITLE (Grind 75)"
 echo "問題: $URL"
-echo "PR: TBD"
+echo "PR: $PR_URL"
 echo "言語: C++"
 echo
 echo "最近解いた方が少ないので、前問同様個別 mention はしませんが、C++ レビューしてもいいよという方がいらしたらコメントいただけると嬉しいです。"
