@@ -74,6 +74,7 @@ fi
 echo "PR is created or found successfully: $PR_URL"
 
 echo
+echo
 echo "OPTION 1"
 echo "$TITLE (Grind 75)"
 echo "問題: $URL"
