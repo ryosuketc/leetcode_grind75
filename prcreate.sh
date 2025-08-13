@@ -46,18 +46,21 @@ $URL"
 git push --set-upstream origin "$DIR_NAME"
 
 # Create PR
-echo "Creating PR..."
+echo "Creating or searching for PR..."
+# 1. Execute `gh pr create`.
+# 2. Redirect stderr to stdout (`2>&1`) so we can capture all output.
+# 3. Pipe the output to `grep` to find the line with the URL.
 PR_URL=$(echo -e "# $TITLE\n\n$URL" | gh pr create \
   --base main \
   --head "$DIR_NAME" \
   --title "$TITLE" \
-  --body-file=-)
+  --body-file=- 2>&1 | grep 'https://')
 # Check if the PR URL was successfully created
 if [ -z "$PR_URL" ]; then
     echo "Failed to create pull request. Please check your gh authentication and network connection."
     exit 1
 fi
-echo "PR is created successfully: $PR_URL"
+echo "PR is created or found successfully: $PR_URL"
 
 echo
 echo "OPTION 1"
