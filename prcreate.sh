@@ -55,7 +55,18 @@ PR_URL=$(echo -e "# $TITLE\n\n$URL" | gh pr create \
   --head "$DIR_NAME" \
   --title "$TITLE" \
   --body-file=- 2>&1 | grep 'https://')
-# Check if the PR URL was successfully created
+
+# 1. Capture all output (stdout and stderr) into a variable
+# (Redirect stderr to stdout (`2>&1`) so we can capture all output)
+GH_PR_CREATE_OUTPUT=$(echo -e "# $TITLE\n\n$URL" | gh pr create \
+  --base main \
+  --head "$DIR_NAME" \
+  --title "$TITLE" \
+  --body-file=- 2>&1)
+echo "$GH_PR_CREATE_OUTPUT"
+# 2. Pipe the output to `grep` to find the line with the URL.
+PR_URL=$(echo "$GH_PR_CREATE_OUTPUT" | grep 'https://')
+# 3. Check if the PR URL was successfully created
 if [ -z "$PR_URL" ]; then
     echo "Failed to create pull request. Please check your gh authentication and network connection."
     exit 1
