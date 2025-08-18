@@ -72,4 +72,4 @@ $URL
 *   
 EOF
 
-echo "Directory '$DIR_NAME' created with template files: step1.py, step2.py, step3.py, memo.md"
+echo "Directory '$DIR_NAME' created with template files: step1$EXTENSION, step2$EXTENSION, step3$EXTENSION, memo.md"
