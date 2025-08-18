@@ -17,7 +17,7 @@ public:
     }
 
 private:
-    std::map<char, int> getCountMap(std::string& s) {
+    std::map<char, int> getCountMap(const std::string& s) {
         std::map<char, int> char_to_count;
         for (char c : s) {
             ++char_to_count[c];
