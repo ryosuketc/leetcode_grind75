@@ -70,6 +70,7 @@ Python だと iPython と `timeit` (https://docs.python.org/ja/3.13/library/time
     *   https://zenn.dev/melos/articles/7b7fbc5fd41270
     *   https://cpprefjp.github.io/lang/cpp11/initializer_lists.html
 *   `Solution4` 書いてみた。C++ で `class` や構造体はまだあまり使ったことがないので機会があればまた書く。
+*   TODO: C++ の `static` よくわかってないので今度調べる。
 
 ### step3
 
