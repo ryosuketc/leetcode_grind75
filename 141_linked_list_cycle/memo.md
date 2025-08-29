@@ -29,4 +29,4 @@ https://leetcode.com/problems/linked-list-cycle/
 
 ### step3
 
-*   
+*   何度も解いているやつなので省略
