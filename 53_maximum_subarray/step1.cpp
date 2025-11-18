@@ -17,7 +17,6 @@ public:
             max_subarray_sum = std::max(max_subarray_sum, subarray_sum);
         }
         return max_subarray_sum;
-
     }
 };
 
@@ -41,6 +40,5 @@ public:
             max_subarray_sum = std::max(max_subarray_sum, subarray_sum);
         }
         return max_subarray_sum;
-
     }
 };
