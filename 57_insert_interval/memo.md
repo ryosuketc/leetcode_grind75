@@ -18,7 +18,6 @@ https://leetcode.com/problems/insert-interval/
     *   IN `[[1,5]], [0, 3]` -> OUT `[[1,5]]` (expect `[0, 5]`) のように前が extend されるケースが考慮されていない。
     *   1h 以上悩んだので一旦力尽きた
 
-
 ### step2
 
 *   https://github.com/huyfififi/coding-challenges/pull/26/files
