@@ -6,7 +6,7 @@ https://leetcode.com/problems/insert-interval/
 
 ### step1
 
-*   大雑把な方針として、[interval_start, interval_end] の区間を掲げて、overlap しなくなるまで j を進める。j が進み終わったら、その時点の [interval_start, interval_end] を push_back という方針で考え始めた。
+*   大雑把な方針として、[interval_start, interval_end] の区間を掲げて、overlap しなくなるまで j を進める。j が進み終わったら、その時点の [interval_start, interval_end] を push_back という方針で考え始めた (この区間を extend していく感覚)。
 *   `SolutionWA1`
     *   しかし inner while のループ条件指定でなぜかドツボにハマって 50 分くらい考え込んでしまった
     *   多分 `interval_end` (今掲げている範囲)、`newInterval` (引数で与えられた範囲)、`intervals[j]` (overlap していたので進めようとしている範囲) の 3 つを同時に処理しようとして、条件設定がよくわからなくなってしまった模様。
@@ -23,7 +23,14 @@ https://leetcode.com/problems/insert-interval/
 *   https://github.com/huyfififi/coding-challenges/pull/26/files
     *   一旦 step2 を見る。なるほど、overlap が発生する前、発生して skip する処理、残りの処理と段階を踏めばよかったのか…
     *   アイデアを見た段階で書き直した
-    *   `step2.Solution`: ようやく AC した…
+*   `step2.Solution`: ようやく AC した…
+    *   これ、ループの条件で少し悩んだ。とぃうのも、1 つめのループと 2 つめのループで、メインの処理対象が異なる感覚。
+        interval insertion みたいなのを考えるとき、2 本の数直線的なものを脳内でイメージしているのだが
+        *   Loop1: `intervals[i]` が先行する数直線で、`newInterval` が後続。したがって、`intervals[i]` の end と、`newInterval` の start を比較。ここでは `insertion_start` と `insertion_end` は更新されない。
+        *   Loop2: `newInterval` (というか厳密には `insertion_start`, `insertion_end` で定義される区間 )が先行する数直線で、`intervals[i]` が後続。したがって、`newInterval`　(というか `[insertion_start, insertion_en]`) の end と、`intervals[i]` の start を比較。
+            *   ちなみに step1 の extend していく感覚だと、なんとなく後ろにのみ extend される感覚があり、start の方の更新を忘れそう (step1 では実際忘れた)
+    *   のように整理していないと、何と何を比較すればよいのかわからなくなりそう。
+
     *   余力がなかったので再帰についての部分はスキップした
 *   https://github.com/huyfififi/coding-challenges/pull/26/files#r2184884440
     *   `newInterval` を `intervals` に放り込んでソートしてから処理する、という発想はなかった (以下一応転載)
